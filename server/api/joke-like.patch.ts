@@ -5,7 +5,7 @@ import { Joke } from "~/interfaces";
 
 export default defineEventHandler(async (event) => {
   const { id } = await readBody(event);
-  const filePath = join(process.cwd(), "server/data/jokes.json");
+  const filePath = join(process.cwd(), "public/data/jokes.json");
   try {
     const fileContent = await fs.readFile(filePath, "utf-8");
     const jokes = JSON.parse(fileContent) as Joke[];
