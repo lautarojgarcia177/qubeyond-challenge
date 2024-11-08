@@ -15,7 +15,8 @@ export default defineEventHandler(async (event) => {
         statusMessage: "The joke to like does not exist",
       });
     }
-    return jokeToLike;
+    jokes = await useStorage('assets:server').getItem('jokes.json') as Joke[]
+    return jokes;
   } catch (error) {
     throw createError({
       statusMessage: "Failed to like the joke",

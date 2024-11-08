@@ -115,16 +115,17 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         toast.add({
             description: 'Joke created',
         })
-        state.type = undefined
-        state.setup = undefined
-        state.punchline = undefined
         await fetchJokes()
-        isOpenCreateJokeModal.value = false
     } catch (error) {
         toast.add({
             description: error.statusMessage,
             color: 'red'
         })
+    } finally {
+        state.type = undefined
+        state.setup = undefined
+        state.punchline = undefined
+        isOpenCreateJokeModal.value = false
     }
 }
 
