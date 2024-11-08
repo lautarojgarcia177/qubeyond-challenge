@@ -13,10 +13,6 @@ const selectedTab = ref(0)
 const isOpenCreateJokeModal = ref(false)
 const carouselRef = ref();
 
-if (route.params.jokeType && jokesTypes.includes(String(route.params.jokeType))) {
-    handleSelectJokeType(jokesTypes.indexOf(String(route.params.jokeType)))
-}
-
 const tabItems = [{
     label: 'General',
 }, {
@@ -131,6 +127,12 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
         })
     }
 }
+
+onMounted(() => {
+    if (route.params.jokeType && jokesTypes.includes(String(route.params.jokeType).toLowerCase())) {
+        handleSelectJokeType(jokesTypes.indexOf(String(route.params.jokeType.toLowerCase())))
+    }
+})
 </script>
 
 <template>

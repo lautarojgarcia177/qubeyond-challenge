@@ -1,6 +1,4 @@
 import { defineEventHandler } from "h3";
-import { promises as fs } from "fs";
-import { join } from "path";
 import { Joke } from "~/interfaces";
 
 export default defineEventHandler(async (event) => {
@@ -11,7 +9,6 @@ export default defineEventHandler(async (event) => {
     if (jokeToLike) {
       jokeToLike.likes++;
       await useStorage('assets:server').setItemRaw('jokes.json', JSON.stringify(jokes, null, 2))
-      // await fs.writeFile(filePath, JSON.stringify(jokes, null, 2), "utf-8");
     } else {
       throw createError({
         statusCode: 400,
