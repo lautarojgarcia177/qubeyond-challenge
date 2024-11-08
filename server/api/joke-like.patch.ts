@@ -5,14 +5,16 @@ import { Joke } from "~/interfaces";
 
 export default defineEventHandler(async (event) => {
   const { id } = await readBody(event);
-  const filePath = join(process.cwd(), "public/data/jokes.json");
+  // const filePath = join(process.cwd(), "public/data/jokes.json");
   try {
-    const fileContent = await fs.readFile(filePath, "utf-8");
-    const jokes = JSON.parse(fileContent) as Joke[];
+    // const fileContent = await fs.readFile(filePath, "utf-8");
+    // const jokes = JSON.parse(fileContent) as Joke[];
+    let jokes = await useStorage('assets:server').getItem('jokes.json') as Joke[];
     const jokeToLike = jokes.find((joke) => joke.id === id);
     if (jokeToLike) {
       jokeToLike.likes++;
-      await fs.writeFile(filePath, JSON.stringify(jokes, null, 2), "utf-8");
+      await useStorage('assets:server').setItem('jokes.json', jokes)
+      // await fs.writeFile(filePath, JSON.stringify(jokes, null, 2), "utf-8");
     } else {
       throw createError({
         statusCode: 400,
