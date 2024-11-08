@@ -5,15 +5,12 @@ import { Joke } from "~/interfaces";
 
 export default defineEventHandler(async (event) => {
   const { id } = await readBody(event);
-  // const filePath = join(process.cwd(), "public/data/jokes.json");
   try {
-    // const fileContent = await fs.readFile(filePath, "utf-8");
-    // const jokes = JSON.parse(fileContent) as Joke[];
     let jokes = await useStorage('assets:server').getItem('jokes.json') as Joke[];
     const jokeToLike = jokes.find((joke) => joke.id === id);
     if (jokeToLike) {
       jokeToLike.likes++;
-      await useStorage('assets:server').setItem('jokes.json', jokes)
+      await useStorage('assets:server').setItemRaw('jokes.json', JSON.stringify(jokes, null, 2))
       // await fs.writeFile(filePath, JSON.stringify(jokes, null, 2), "utf-8");
     } else {
       throw createError({
