@@ -5,10 +5,8 @@ import { Joke } from "~/interfaces";
 
 export default defineEventHandler(async (event) => {
   const { count, offset, type, id } = getQuery(event);
-  const filePath = join(process.cwd(), "public/data/jokes.json");
   try {
-    const fileContent = await fs.readFile(filePath, "utf-8");
-    let jokes = JSON.parse(fileContent) as Joke[];
+    let jokes = await useStorage('assets:server').getItem('jokes.json') as Joke[];
     if (offset && count) {
       jokes = jokes.slice(Number(offset), Number(offset) + Number(count));
     }
