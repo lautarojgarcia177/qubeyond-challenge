@@ -18,6 +18,7 @@ export default defineEventHandler(async (event) => {
     return jokes;
   } catch (error) {
     throw createError({
+      message: error as string,
       statusMessage: "Failed to read the data file",
     });
   }
