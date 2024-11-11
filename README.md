@@ -1,75 +1,57 @@
-# Nuxt Minimal Starter
+# QUBeyond coding challenge by Lautaro Jorge Garcia
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+### Live Deployment
+[qubeyond-challenge.vercel.app](qubeyond-challenge.vercel.app)
 
-## Setup
+## Table of contents
 
-Make sure to install dependencies:
+### Overview
+The objective of this project was to create a web application that connects to an API to display jokes. The application utilizes Nuxt.js for the frontend, providing a smooth experience with options for sorting and pagination, and MongoDB Atlas as the backend database for storing and retrieving joke data.
 
-```bash
-# npm
-npm install
+This project demonstrates skills in:
 
-# pnpm
-pnpm install
+- Using Vue/Nuxt.js for web development
+- Integrating MongoDB Atlas for persistent storage
 
-# yarn
-yarn install
+### Features
+- Read jokes by category
+- Interactive Controls: Allows users to rate, add, or delete jokes.
+- API integration: Retrieval of the data is done server-side.
+- Data Persistence: Jokes are saved in a database.
 
-# bun
-bun install
+### Technologies Used
+Frontend: Nuxt.js, Vue.js, HTML, CSS
+Backend: Nuxt.js, Node.js, Mongoose
+Database: MongoDB Atlas (for data storage)
+
+### Setup and Installation
+1) Clone the repository
+
+    `git clone https://github.com/yourusername/yourrepo.git`
+
+    `cd yourrepo`
+2) Install dependencies
+    `npm install`
+3) Configure Environment Variables
+    `MONGODB_URI=your-mongo-atlas-uri`
+4) Build the application
+    - For development mode: `npm run dev`
+    - For prod mode: build the application: `npm run build` and then start the server: `npm run start`
+5) Access the application: Visit `http://localhost:3000` in your browser
+
+### Project Structure
+
+```plaintext
+.
+├── constants      # Typescript constants
+├── interfaces     # Typescript interfaces
+├── pages          # Nuxt.js pages
+├── public         # Static assets
+├── server         # Server-side code
+|    ├── api       # API endpoints
+|    └── models    # Data base Models for ODM
+├── assets         # Static assets like images, stylesheets
+└── README.md      # Project documentation
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Made with enthusiasm by [Lautaro Jorge Garcia](https://github.com/lautarojgarcia177/lautarojgarcia177)
