@@ -6,7 +6,7 @@
 ## Table of contents
 
 ### Overview
-The objective of this project was to create a web application that connects to an API to display jokes.
+The objective of this project was to create a web application that connects to an API to CRUD jokes.
 
 This project demonstrates skills in:
 
