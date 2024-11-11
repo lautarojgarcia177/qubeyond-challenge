@@ -54,4 +54,4 @@ Database: MongoDB Atlas (for data storage)
 └── README.md      # Project documentation
 ```
 
-Made with enthusiasm by [Lautaro Jorge Garcia](https://github.com/lautarojgarcia177/lautarojgarcia177)
+Made with enthusiasm by [Lautaro Jorge Garcia](https://github.com/lautarojgarcia177)
