@@ -19,6 +19,7 @@ This project demonstrates skills in:
 - API integration: Retrieval of the data is done server-side.
 - Data Persistence: Jokes are saved in a database.
 - Responsive design: Adapts to different viewport dimensions
+- Feedback: Everytime the user makes a persistent action, the result of it is notified wiath a toast notification.
 
 ### Technologies Used
 Frontend: Nuxt.js, Vue.js, HTML, CSS
