@@ -15,9 +15,10 @@ This project demonstrates skills in:
 
 ### Features
 - Read jokes by category
-- Interactive Controls: Allows users to rate, add, or delete jokes.
+- Interactive Controls: Allows users to rate (clicking in the 😂 icon), add, or delete jokes.
 - API integration: Retrieval of the data is done server-side.
 - Data Persistence: Jokes are saved in a database.
+- Responsive design: Adapts to different viewport dimensions
 
 ### Technologies Used
 Frontend: Nuxt.js, Vue.js, HTML, CSS
