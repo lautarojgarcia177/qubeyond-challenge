@@ -6,7 +6,7 @@
 ## Table of contents
 
 ### Overview
-The objective of this project was to create a web application that connects to an API to display jokes. The application utilizes Nuxt.js for the frontend, providing a smooth experience with options for sorting and pagination, and MongoDB Atlas as the backend database for storing and retrieving joke data.
+The objective of this project was to create a web application that connects to an API to CRUD jokes.
 
 This project demonstrates skills in:
 
@@ -15,9 +15,11 @@ This project demonstrates skills in:
 
 ### Features
 - Read jokes by category
-- Interactive Controls: Allows users to rate, add, or delete jokes.
+- Interactive Controls: Allows users to rate (clicking in the 😂 icon), add, or delete jokes.
 - API integration: Retrieval of the data is done server-side.
 - Data Persistence: Jokes are saved in a database.
+- Responsive design: Adapts to different viewport dimensions
+- Feedback: Everytime the user makes a persistent action, the result of it is notified wiath a toast notification.
 
 ### Technologies Used
 Frontend: Nuxt.js, Vue.js, HTML, CSS

@@ -1,4 +1,4 @@
-1. What's a closure? Where in the code is there a closure?
+## 1. What's a closure? Where in the code is there a closure?
 
 A closure in Javascript is what gives a function access to its outer scope, even after that scope has finished executing.
 
@@ -15,7 +15,7 @@ async function fetchJokes() {
 }
 ```
 
-2. Which are the potential side-effects in any function? Could you point out any of these cases in your code? Are they expected? Can they be avoided?
+## 2. Which are the potential side-effects in any function? Could you point out any of these cases in your code? Are they expected? Can they be avoided?
 
 I take advantage of side effects for application functionality like modifying variables outside the function, performing network requests, writing to a database, or updating the UI.
 
