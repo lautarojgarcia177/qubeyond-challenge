@@ -2,14 +2,13 @@ import { defineEventHandler, getQuery } from "h3";
 import { JokeSchema } from "../models/Joke.schema";
 
 export default defineEventHandler(async (event) => {
-  const { count, offset, type, id } = getQuery(event);
+  const { type } = getQuery(event);
   try {
-    let jokes = await JokeSchema.find({})
-    if (offset && count) {
-      jokes = jokes.slice(Number(offset), Number(offset) + Number(count));
-    }
+    let jokes;
     if (type) {
-      jokes = jokes.filter((joke) => joke.type === type);
+      jokes = await JokeSchema.find({ type });
+    } else {
+      jokes = await JokeSchema.find({});
     }
     return jokes;
   } catch (error) {
